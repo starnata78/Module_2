@@ -16,7 +16,6 @@ namespace Module_2.Controllers
         /// <param name="side">The number of calories in a side</param>
         /// <param name="drink">The number of calories in drink</param>
         /// <param name="dessert">The number of calorties in a drink</param>
-        /// <param name="Toonies">The number of Toonies</param>
         /// <returns>"Your total count of calories is (sum of parameters)</returns>
         /// <example>
         ///     GET api/Assignment_1/Menu/0/0/0/0/		-> "Tour total count of calories is 0"
@@ -24,7 +23,7 @@ namespace Module_2.Controllers
         [Route("api/Assignment_2/Menu/{burger}/{drink}/{side}/{dessert}")]
       public string Menu (int burger, int side, int drink, int dessert)
         {
-            int burgerCalories;
+            int burgerCalories = 0;
             if (burger == 1)
                 burgerCalories = 461;
             else if (burger == 2)
@@ -33,7 +32,7 @@ namespace Module_2.Controllers
                 burgerCalories = 420;
             else if (burger == 4)
                 burgerCalories = 0;
-            int sideCalories;
+            int sideCalories = 0;
             if (side == 1)
                 sideCalories = 100;
             else if (side == 2)
@@ -42,7 +41,7 @@ namespace Module_2.Controllers
                 sideCalories = 70;
             else if (side == 4)
                 sideCalories = 0;
-            int drinkCalories;
+            int drinkCalories = 0;
             if (drink == 1)
                 drinkCalories = 130;
             else if (drink == 2)
@@ -51,7 +50,7 @@ namespace Module_2.Controllers
                 drinkCalories = 118;
             else if (drink == 4)
                 drinkCalories = 0;
-            int dessertCalories;
+            int dessertCalories = 0;
             if (dessert == 1)
                 dessertCalories = 167;
             else if (dessert == 2)
@@ -61,7 +60,8 @@ namespace Module_2.Controllers
             else if (dessert == 4)
                 dessertCalories = 0;
 
-            return "Hello";
+            int sum = burgerCalories + sideCalories + drinkCalories + dessertCalories;
+            return "Your total count of calories is " + sum + "!";
         }
     }
 }
